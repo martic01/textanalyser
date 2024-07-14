@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Coda:wght@400;800&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
+
+.font2 {
+    font-family: "Playwrite HR Lijeva", cursive !important;
+    font-optical-sizing: auto;
+
+}
+
+.font3 {
+    font-family: "Coda", system-ui !important;
+    font-style: normal;
+}
+
 
 html {
     scroll-behavior: smooth;
@@ -20,7 +34,8 @@ p {
 }
 
 body {
-    background-color: rgb(104, 103, 103);
+    background-color: rgb(165, 165, 165);
+    font-family: "Chakra Petch", sans-serif;
 }
 
 .pjnm {
@@ -59,9 +74,10 @@ body {
     height: 600px;
     box-shadow: 0 0 25px 2px white;
     border-radius: 20px;
-    background: radial-gradient(circle, black, rgb(94, 92, 92));
+    background: radial-gradient(circle, black, goldenrod);
 
 }
+
 
 .mncont:hover {
     transition: 0.5s ease-in-out;
@@ -70,47 +86,107 @@ body {
 
 @keyframes roll {
     0% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), );
+        background: radial-gradient(circle, black, rgb(177, 128, 5));
     }
 
     10% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black);
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black);
     }
 
     20% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black, rgb(190, 188, 188));
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black, rgb(177, 128, 5));
     }
 
     30% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black, rgb(190, 188, 188), black);
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black, rgb(177, 128, 5), black);
     }
 
     40% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black, rgb(190, 188, 188), black, rgb(190, 188, 188));
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black, rgb(177, 128, 5), black, rgb(177, 128, 5));
     }
 
     50% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black, rgb(190, 188, 188), black, rgb(190, 188, 188), black);
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black, rgb(177, 128, 5), black, rgb(177, 128, 5), black);
     }
 
     60% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black, rgb(190, 188, 188), black, rgb(190, 188, 188));
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black, rgb(177, 128, 5), black, rgb(177, 128, 5));
     }
 
     70% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black, rgb(190, 188, 188), black);
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black, rgb(177, 128, 5), black);
     }
 
     80% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black, rgb(190, 188, 188));
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black, rgb(177, 128, 5));
     }
 
     90% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), black);
+        background: radial-gradient(circle, black, rgb(177, 128, 5), black);
     }
 
     100% {
-        background: radial-gradient(circle, black, rgb(190, 188, 188), );
+        background: radial-gradient(circle, black, rgb(102, 74, 3));
+    }
+
+
+}
+
+
+.mncont2 {
+
+    background: linear-gradient(to bottom, black, silver);
+
+}
+
+.mncont2:hover {
+    transition: 0.5s ease-in-out !important;
+    animation: 3s roll2 linear infinite !important;
+}
+
+@keyframes roll2 {
+    0% {
+        background: linear-gradient(to bottom, black, silver);
+    }
+
+    10% {
+        background: linear-gradient(to bottom, black, silver, black);
+    }
+
+    20% {
+        background: linear-gradient(to bottom, black, silver, black, silver);
+    }
+
+    30% {
+        background: linear-gradient(to bottom, black, silver, black, silver, black);
+    }
+
+    40% {
+        background: linear-gradient(to bottom, black, silver, black, silver, black, silver);
+    }
+
+    50% {
+        background: linear-gradient(to bottom, black, silver, black, silver, black, silver, black);
+    }
+
+    60% {
+        background: linear-gradient(to bottom, black, silver, black, silver, black, silver);
+    }
+
+    70% {
+        background: linear-gradient(to bottom, black, silver, black, silver, black);
+    }
+
+    80% {
+        background: linear-gradient(to bottom, black, silver, black, silver);
+    }
+
+    90% {
+        background: linear-gradient(to bottom, black, silver, black);
+    }
+
+    100% {
+        background: linear-gradient(to bottom, black, silver);
     }
 
 
@@ -134,6 +210,14 @@ body {
     width: 95%;
     background-color: goldenrod;
     border-radius: 20px;
+}
+
+.text2 {
+    background-color: rgb(119, 118, 118) !important;
+}
+
+.text3 {
+    background-color: rgb(4, 4, 82) !important;
 }
 
 .text p {
@@ -213,6 +297,11 @@ body {
     background-color: black;
     border-radius: 20px;
     border: 3px solid rgb(245, 241, 6);
+   
+}
+
+.border1 {
+    border: 3px solid rgb(238, 238, 236) !important;
 }
 
 .num {
@@ -244,8 +333,6 @@ body {
     border-radius: 20px;
     background-color: goldenrod;
     border: 5px solid rgb(218, 215, 215);
-    overflow: hidden;
-    display: block;
 }
 
 .return p {
@@ -282,7 +369,7 @@ body {
 
 #occur {
     padding: 10px 10px;
-    height: 70%;
+    height: 400px;
     width: 100%;
     color: black;
     outline: none;
@@ -291,11 +378,20 @@ body {
     font-size: 20px;
     font-weight: 700;
     background-color: rgb(230, 228, 228);
+    overflow: scroll;
+    display: none;
+    opacity: 0;
+    animation: 1s fadin linear forwards;
+}
+@keyframes fadin{
+    to{
+        opacity: 1;
+    }
 }
 
 .textal {
     font-size: 18px;
-
+    text-align: left !important;
 }
 
 .option2 {
@@ -306,74 +402,129 @@ body {
     color: white;
     border-radius: 5px;
     background-color: black;
-    border: 1px solid rgb(218, 215, 215);
-    overflow: hidden;
     margin-right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    overflow: hidden;
+    justify-content: center;
+   
+}
+.mncont:hover .font {
+    animation: 0.6s movin linear;
+}
+.mncont:hover .col {
+    animation: 1s movin linear;
+}
+@keyframes movin {
+    from {
+        transform: translateX(200px);
+
+    }
 }
 
 .font {
-    padding-left:40px ;
+    padding-left: 40px;
     height: 30%;
+    z-index: 99;
     width: 100%;
     color: black;
     outline: none;
     border: none;
     line-height: 35px;
-    font-size: 20px;
     font-weight: 700;
-    background-color: aqua;
 }
 
 .list {
     position: absolute;
-    margin-top: -22px;
+    text-align: center;
+    margin-top: -14px;
     height: 13%;
-    width: 100px;
+    width: 120px;
     color: black;
     outline: none;
     border: none;
-    border-top-right-radius: 20px ;
-    border-bottom-right-radius: 20px ;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     line-height: 35px;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
-    background-color: rgb(218, 13, 13);
+    background-color: rgb(228, 223, 223);
     display: none;
     opacity: 0;
 }
-.font:hover .list{
-    display: block;
-    transition: 0.3s ease-in-out;
-    animation: 0.5s min linear forwards;
+
+.hover {
+    background-color: goldenrod;
 }
-@keyframes min{
-    from{
-        transform: translateX(-10px);
+
+.hover li:hover {
+    transition: 0.3s ease-in-out !important;
+    color: rgb(218, 3, 3) !important;
+    font-size: 20px;
+    background-color: silver !important;
+}
+
+.list li:hover {
+    transition: 0.3s ease-in-out;
+    color: white;
+    font-size: 20px;
+    background-color: goldenrod;
+}
+
+.font:hover .list {
+    display: block;
+    transition: 0.2s ease-in-out;
+    animation: 0.3s min linear forwards;
+}
+
+@keyframes min {
+    from {
+        transform: translateX(-4px);
         opacity: 0.2;
     }
-    to{
+
+    to {
         transform: translateX(0);
         opacity: 1;
     }
 }
+
 .col {
-    padding-left:40px ;
+    padding-left: 40px;
     height: 30%;
     width: 100%;
     color: black;
     outline: none;
     border: none;
     line-height: 35px;
-    font-size: 20px;
     font-weight: 700;
-    background-color: aqua;
+}
+
+.img {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    margin-left: -39px;
+    background-color: brown;
+}
+
+img {
+    height: 100%;
+    width: 100%;
 }
 
 .list2 {
-    margin-top: -58px;
+    margin-top: -56px;
 }
-.col:hover .list{
+
+.list2 li {
+    height: 50%;
+    padding-top: 10px;
+}
+
+.col:hover .list {
     display: block;
-    transition: 0.3s ease-in-out;
-    animation: 0.5s min linear forwards;
+    transition: 0.2s ease-in-out;
+    animation: 0.3s min linear forwards;
 }
