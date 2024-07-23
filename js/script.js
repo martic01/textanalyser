@@ -7,9 +7,7 @@ function textArea() {
 function textAreaToLowercase(text) {
     return text.toLowerCase()
 }
-function textAreaToArray2(text) {
-    return text.split(/\s+/)
-}
+
 function textAreaToArray(text) {
     return text.split(" ")
 }
@@ -17,7 +15,7 @@ function inputWord() {
     return document.getElementById("input").value.trim();
 }
 function badWordsArray() {
-    let bad = ["mad", "crazy", "stupid", "fool", "fuck", "fucking", "idiot", "bitch", "foolish", "stupidity", "stupider", "idiotic", "foolishness", "stupidness", "madness", "mumu", "ode", "mugu"];
+    let bad = ["mad", "crazy", "stupid", "fool", "fuck", "fucking", "idiot", "bitch", "foolish", "stupidity", "stupider", "idiotic", "foolishness", "stupidness", "madness", "mumu", "ode", "mugu", 'zoinks', 'loopdaloop', 'biffaroni', 'muppeteer'];
     return bad;
 }
 function noInputtedWord() {
@@ -42,7 +40,7 @@ function countWords() {
     })
     return counter
 }
-function countOffenciveWords() {
+function countOffensiveWords() {
     let array = textAreaToArray(textAreaToLowercase(textArea()))
     let badWords = badWordsArray()
     let counter = 0
@@ -56,7 +54,7 @@ function countOffenciveWords() {
     });
     return counter
 };
-function OffenciveWords() {
+function OffensiveWords() {
     let words = textAreaToArray(textAreaToLowercase(textArea()));
     let badWords = badWordsArray()
 
@@ -141,7 +139,7 @@ function findShortestWord() {
         return shortest;
     }
 
-    let shortestWord = words[0];
+    let shortestWord = "No word yet";
 
     for (let i = 0; i < words.length; i++) {
         if (words[i].length < shortestWord.length && !Number(words[i])) {
@@ -158,9 +156,8 @@ function findShortestWord() {
         return result
     } else if (textArea() === "") {
         shortestWord = "No word yet"
-        return shortestWord
     }
-
+    return shortestWord
 }
 function countWordsOccurence() {
     let words = textAreaToLowercase(inputWord())
@@ -180,32 +177,35 @@ function colorWordsOccurence() {
         return "";
     }
     let words = textAreaToLowercase(inputWord())
-    let array = textAreaToArray(textAreaToLowercase(OffenciveWords()))
+    let array = textAreaToArray(textAreaToLowercase(OffensiveWords()))
     let returnWords = "<p class='textal'>"
 
     array.forEach(function (text, index) {
         if (text !== "" && !Number(text) && words === text) {
-            returnWords += "<b style='background-color:transparent ; border:3px solid red; padding: 2px;'>" +
+            returnWords += "<b style='background-color:transparent ; border:3px solid red; padding: 1px;'>" +
                 text +
                 "</b>"
         } else if (text !== "" && words !== "" && !Number(text) && text.includes(words)) {
-            returnWords += "<b style='background-color:transparent ; border:1px solid blue; padding: 2px;'>" +
-                text +
-                "</b>"
+            const regex = new RegExp(words, "gi");
+            let matchArray = text.match(regex);
+            text = text.replace(matchArray[0], "<b style='background-color:transparent ; border:1px solid blue; padding: 1px;'>" +
+                matchArray[0] +
+                "</b>")
+            returnWords = returnWords.concat(text);
         } else {
-            returnWords += text
+            returnWords = returnWords.concat(text);
         }
         if (index !== array.length - 1) {
             returnWords += " "
+
         }
 
-        // return returnWords
+
     })
 
     returnWords += "</p>"
     return returnWords
-    // returnWords += "</p>"
-    // return returnWords
+
 }
 
 function numberToBinary() {
@@ -250,13 +250,92 @@ function numberToBinary() {
 
 
 };
+function writeLetter() {
+    let area = textAreaToLowercase(textArea());
+    let sent1 = "Write a Resignation mail";
+    let sent2 = "Write a Resignation letter";
+    let secert = $("#secret").val()
+
+    if (area === textAreaToLowercase(sent1) || area === textAreaToLowercase(sent2)) {
+        $("#mail").show();
+        $("#clear").hide();
+        $("#occur").hide();
+        $(".hedd").show();
+        $("#done").hide();
+        $("#copy2").hide();
+    } else if (area !== "" && secert === "1") {
+        $("#mail").show();
+        $("#occur").hide();
+        $(".hedd").show();
+        $("#done").show();
+        $("#clear").show();
+        $("#copy2").hide();
+    } else if (area !== "") {
+        $("#mail").hide();
+        $("#occur").show();
+        $(".hedd").hide();
+    } else if (area === "") {
+        $("#secret").val("")
+        $(".hedd").hide();
+        $("#done").hide();
+        $("#clear").hide();
+        $("#mail").hide();
+        $("#edit").show();
+        $("#cop1").show();
+        $("#cop2").hide();
+        $("#cop3").show();
+        $("#cop4").hide();
+        $("#cop5").show();
+        $("#cop6").hide();
+    }
+
+}
+function editLetter() {
+    let editingWord = $("#mail").text()
+    $("#message").val(editingWord)
+    $("#secret").val("1")
+    $("#edit").hide()
+    $("#done").show();
+    $("#clear").show();
+    $("#copy2").hide();
+}
+function clear() {
+    $("#message").val("")
+    $("#secret").val("")
+    $(".hedd").hide();
+    $("#done").hide();
+    $("#clear").hide();
+    $("#mail").hide();
+    $("#edit").show();
+    $("#cop1").show();
+    $("#cop2").hide();
+    $("#cop3").show();
+    $("#cop4").hide();
+    $("#cop5").show();
+    $("#cop6").hide();
+}
 function occur() {
     if (noInputtedWord(textArea())) {
+        $("#done").hide();
+        $("#copy2").hide();
         $("#occur").hide()
     } else {
         $("#occur").show()
+        $("#done").hide();
+        $("#copy2").show();
     }
 }
+function copy1(text) {
+    let textToCopy = text;
+    let tempTextarea = $("<textarea>");
+    tempTextarea.val(textToCopy);
+    $("body").append(tempTextarea);
+    tempTextarea.select();
+    document.execCommand("copy");
+    $(tempTextarea).remove();
+
+}
+
 function changeStyle2() {
     $(".text").addClass("text2")
     $(".result").addClass("text2")
@@ -292,37 +371,67 @@ function fontStyle3() {
 }
 
 
+
 // UI
 
 window.onload = function () {
     $("#message").on("input", function () {
         let textarea = colorWordsOccurence();
-        let countOfMassage = countWords();
-        let countOfBadWords = countOffenciveWords();
-        let topThreeWord = topThreeWords()
-        let longest = findLongestWord()
-        let shortest = findShortestWord()
-        let countWordsOccurences = countWordsOccurence();
-        let numberToBinarys = numberToBinary()
-        $(".tcount").text(countOfMassage);
-        $(".fcount").text(countOfBadWords);
-        $("#occur").html(textarea);
-        $(".top").html(topThreeWord);
-        $(".long").html(longest);
-        $(".short").html(shortest);
-        $(".acount").text(countWordsOccurences);
-        $(".num2").html(numberToBinarys);
-        occur()
+        let countOfMessages = countWords();
+        let countOfBadWords = countOffensiveWords();
+        let topThreeWordsList = topThreeWords();
+        let longestWord = findLongestWord();
+        let shortestWord = findShortestWord();
+        let countWordsOccurrences = countWordsOccurence();
+        let numberToBinaryList = numberToBinary();
 
+        $(".tcount").text(countOfMessages);
+        $(".fcount").text(countOfBadWords);
+        $(".top").html(topThreeWordsList);
+        $(".long").html(longestWord);
+        $(".short").html(shortestWord);
+        $(".acount").text(countWordsOccurrences);
+        $(".num2").html(numberToBinaryList);
+        $("#occur").html(textarea);
+        occur();
+        writeLetter()
 
     });
+
     $("#input").on("input", function () {
         let textarea = colorWordsOccurence();
         let countWordsOccurences = countWordsOccurence();
         $(".acount").text(countWordsOccurences);
         $("#occur").html(textarea);
-
     })
+
+    $("#edit").click(function () {
+        editLetter()
+    })
+    $("#clear").click(function () {
+        clear()
+    });
+    $("#copy1").click(function () {
+        let textToCopied = $("#mail").text();
+        copy1(textToCopied)
+        $("#cop1").hide();
+        $("#cop2").show();
+    });
+
+    $("#copy2").click(function () {
+        let textToCopied = $("#occur").text();
+        copy1(textToCopied)
+        $("#cop3").hide();
+        $("#cop4").show();
+    });
+    $("#done").click(function () {
+        let textToCopied = $("#message").val();
+        copy1(textToCopied)
+        $("#cop5").hide();
+        $("#cop6").show();
+
+    });
+
     $("#style1").click(function () {
         changeStyle1()
     })
@@ -338,15 +447,5 @@ window.onload = function () {
     $("#font3").click(function () {
         fontStyle3()
     })
-    // console.log(textArea())
-    // console.log(textAreaToArray())
-    // console.log(inputWord())
-
-
-
-
-
-
-
 
 }
