@@ -547,6 +547,7 @@ img {
     background-color: rgb(241, 241, 241);
     border-radius: 20px;
     overflow: scroll;
+    opacity: 0;
     display: none;
 
     animation: 1s fadin linear forwards;
