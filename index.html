@@ -20,16 +20,33 @@
     <main class="mncont">
         <div class="allt">
             <div class="text">
-                <p>Write A Message</p>
+                <p>Write A Message
+                    <div class="bbtn">
+                        <div id="done" class="copy">
+                            <div id="copy3">
+                                <ul id="cop5" class="copn-g">
+                                    <li>Done</li>
+                                </ul>
+                                <ul id="cop6" class="cop">
+                                    <li>Copied</li>
+                                </ul>
+                                <ul class="cop cop-g">
+                                    <li>Copied</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="clear" class="copy">
+                            Clear
+                        </div>
+                    </div>
+                </p>
                 <textarea placeholder="Write something..." name="" id="message"></textarea>
             </div>
             <div class="result">
                 <p>Total Word Count : <Span class="tcount">0</Span></p>
                 <p>Total Offencive word Count : <Span class="fcount">0</Span></p>
                 <p>Longest Word : <Span class="long">No word yet</Span></p>
-                <p>Shortest word : <Span class="short">No word yet</Span></p>
-
-
+                <!-- <p>Shortest word : <Span class="short">No word yet</Span></p> -->
             </div>
             <div class="num topwrd">
                 <p>To Binary</p>
@@ -61,24 +78,6 @@
                             <li>Copied</li>
                         </ul>
                     </div>
-                 <div class="bbtn">
-                    <div id="done" class="copy">
-                        <div id="copy3">
-                            <ul id="cop5" class="copn-g">
-                                <li>Done</li>
-                            </ul>
-                            <ul id="cop6" class="cop">
-                                <li>Copied</li>
-                            </ul>
-                            <ul class="cop cop-g">
-                                <li>Copied</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="clear" class="copy">
-                        Clear
-                    </div>
-                 </div>
                 </div>
             </div>
 
@@ -87,16 +86,18 @@
 
 
             </div>
-            <div id="mail" class="email-full">
+            <div id="mail" aria-live="polite" class="email-full">
                 <h1>Resignation mail</h1>
 
-                <p> Dear <span class="manager-nm">[Manager's Name]</span>,</p>
+                <p> Dear <span class="managernm">[Manager's Name]</span><span class="editin"> ,</span></p>
 
-                <p> I am writing to formally resign from my position as <span class="yrposition"> [Your Position]</span>
+                <p> I am writing to formally resign from my position as <span class="yrposition"> [Your
+                        Position]</span><span class="editin"> ,</span>
                     at
-                    <span class="company">[Company Name]</span> , effective <span class="nw-date"> [Resignation
-                        Date]</span>
-                    . After careful
+                    <span class="company">[Company Name]</span><span class="editin">,</span> effective <span
+                        class="nw-date"> [Resignation
+                        Date]</span><span class="editin"> .</span>
+                    After careful
                     consideration, I have decided to move on to pursue new opportunities that align more closely with my
                     career goals and personal aspirations.
                 </p>
@@ -124,12 +125,12 @@
                 <p> Warm regards,</p>
                 <br>
 
-                <p><span class="yrname">[Your Name]</span></p>
+                <p><span class="yrname">[Your Name]</span><span class="editin"> ,</span></p>
                 <br>
                 <p> <span class="yrposition">[Your Position]
                     </span></p>
                 <br>
-                <p> <span class="nw-date">[Present Date]
+                <p> <span class="nw-date">[Resignation Date]
                     </span></p>
 
             </div>
@@ -173,7 +174,6 @@
                 </ul>
             </div>
         </div>
-
     </main>
     one
 
