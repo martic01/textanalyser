@@ -34,7 +34,7 @@ function countWords() {
     let counter = 0
 
     array.forEach(function (text) {
-        if (textArea() !== "" && text !== "" && !Number(text)) {
+        if (textArea() !== ""  && text !== "" && !Number(text)) {
             counter++
         }
     })
@@ -131,41 +131,22 @@ function findLongestWord() {
     }
 
 }
-function findShortestWord() {
-    let words = textAreaToArray(textAreaToLowercase(textArea()))
+// function escapeRegExp(string) {
+//     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape special characters in the input word
+// }
 
-    if (words.length === 0) {
-        let shortest = null
-        return shortest;
-    }
 
-    let shortestWord = "No word yet";
-
-    for (let i = 0; i < words.length; i++) {
-        if (words[i].length < shortestWord.length && !Number(words[i])) {
-            shortestWord = words[i];
-        }
-    }
-
-    if (textArea() !== "") {
-        let change = "<p style='font-size:18px; color:blue;'>"
-        change += "Lenght of Shortest word : " + "<b style='font-size:20px; color: rgb(6, 51, 82);'>" + shortestWord.length; + "</b>"
-        change += "</p>"
-        let result = shortestWord + "<br>" + change
-
-        return result
-    } else if (textArea() === "") {
-        shortestWord = "No word yet"
-    }
-    return shortestWord
-}
 function countWordsOccurence() {
     let words = textAreaToLowercase(inputWord())
     let array = textAreaToArray(textAreaToLowercase(textArea()))
     let counter = 0
 
+    // let escapedInputWord = escapeRegExp(words);
+    // let regex = new RegExp(`\\W${escapedInputWord}\\W*`, 'gi');
+    // regex.test(text)
+ 
     array.forEach(function (text) {
-        if (textArea() !== "" && text !== "" && !Number(text) && words === text) {
+        if (textArea() !== ""  && text !== "" && !Number(text) && text === words ) {
             counter++
         }
     })
@@ -287,6 +268,7 @@ function writeLetter() {
         $("#cop4").hide();
         $("#cop5").show();
         $("#cop6").hide();
+
     }
 
 }
@@ -369,19 +351,28 @@ function fontStyle3() {
     $(".mncont").addClass("font3")
 
 }
-
+function announceText(message) {
+    let statusMessageDiv = document.getElementById('mail');
+    // Clear the content to force the screen reader to read the new message
+    statusMessageDiv.textContent = '';
+    // Set a small delay to ensure the screen reader registers the content change
+    setTimeout(() => {
+        statusMessageDiv.textContent = message;
+    }, 100);
+}
 
 
 // UI
 
 window.onload = function () {
     $("#message").on("input", function () {
+        let area = textAreaToLowercase(textArea());
         let textarea = colorWordsOccurence();
         let countOfMessages = countWords();
         let countOfBadWords = countOffensiveWords();
         let topThreeWordsList = topThreeWords();
         let longestWord = findLongestWord();
-        let shortestWord = findShortestWord();
+        // let shortestWord = findShortestWord();
         let countWordsOccurrences = countWordsOccurence();
         let numberToBinaryList = numberToBinary();
 
@@ -389,13 +380,20 @@ window.onload = function () {
         $(".fcount").text(countOfBadWords);
         $(".top").html(topThreeWordsList);
         $(".long").html(longestWord);
-        $(".short").html(shortestWord);
+        // $(".short").html(shortestWord);
         $(".acount").text(countWordsOccurrences);
         $(".num2").html(numberToBinaryList);
         $("#occur").html(textarea);
         occur();
         writeLetter()
+        if (area === "") {
+            $(".managernm").html("<span>[Manager's Name]</span>")
+            $(".yrposition").html("<span>[Your Position]</span>")
+            $(".company").html("<span>[Company Name]</span>")
+            $(".nw-date").html("<span>[Resignation Date]</span>")
+            $(".yrname").html("<span>[Your Name]</span>")
 
+        }
     });
 
     $("#input").on("input", function () {
@@ -410,12 +408,19 @@ window.onload = function () {
     })
     $("#clear").click(function () {
         clear()
+        $(".managernm").html("<span>[Manager's Name]</span>")
+        $(".yrposition").html("<span>[Your Position]</span>")
+        $(".company").html("<span>[Company Name]</span>")
+        $(".nw-date").html("<span>[Resignation Date]</span>")
+        $(".yrname").html("<span>[Your Name]</span>")
+
     });
     $("#copy1").click(function () {
         let textToCopied = $("#mail").text();
         copy1(textToCopied)
         $("#cop1").hide();
         $("#cop2").show();
+        console.log("clicked")
     });
 
     $("#copy2").click(function () {
@@ -423,15 +428,52 @@ window.onload = function () {
         copy1(textToCopied)
         $("#cop3").hide();
         $("#cop4").show();
+        console.log("clicked")
     });
     $("#done").click(function () {
         let textToCopied = $("#message").val();
         copy1(textToCopied)
         $("#cop5").hide();
         $("#cop6").show();
+        console.log("clicked")
 
     });
+    $(".editin").click(function () {
+        let index = $(".editin").index(this)
+        if(index === 0){
+        $(".managernm").html("<input type='text'  id='managernm'><b ><button class='paste' value ='1'>Paste</button></b>")
+        }else if (index === 1){
+            $(".yrposition").html("<input type='text'  id='yrposition'><b ><button class='paste' value ='2'>Paste</button></b>")
+        }else if (index === 2){
+            $(".company").html("<input type='text'  id='company'><b ><button class='paste' value ='3'>Paste</button></b>")
+        }else if (index === 3){
+            $(".nw-date").html("<input type='date'  id='nw-date'><b ><button class='paste' value ='4'>Paste</button></b>")
+        }else if (index === 4){
+            $(".yrname").html("<input type='text'  id='yrname'><b ><button class='paste' value ='6'>Paste</button></b>")
+        }
+         $(".paste").click( function () {
+            let index = parseInt($(this).val())
+            const value1Taken = $("#managernm").val().trim();
+            const value2Taken = $("#yrname").val().trim();
+            const value3Taken = $("#company").val().trim();
+            const value4Taken = $("#yrposition").val().trim();
+            const value5Taken = $("#nw-date").val().trim();
+           
 
+            if (index === 1 && value1Taken !=="") {
+                $(".managernm").text(value1Taken);
+            } else if (index === 2 && value4Taken !=="") {
+                $(".yrposition").text(value4Taken);
+            } else if (index === 3 && value3Taken !=="") {
+                $(".company").text(value3Taken);
+            } else if (index === 4 && value5Taken !=="") {
+                $(".nw-date").text(value5Taken);
+            }  else if (index === 6 && value2Taken !=="") {
+                $(".yrname").text(value2Taken);
+            }
+        });
+    });
+  
     $("#style1").click(function () {
         changeStyle1()
     })
@@ -449,3 +491,74 @@ window.onload = function () {
     })
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function findShortestWord() {
+//     let words = textAreaToArray(textAreaToLowercase(textArea()));
+
+//     if (words.length === 0) {
+//         return "No words in the text area.";
+//     }
+
+//     let shortestWord = "";
+
+//     for (let i = 0; i < words.length; i++) {
+//         if (words[i].length < shortestWord.length && isNaN(words[i])) {
+//             shortestWord = words[i];
+//         }
+//     }
+
+//     if (textArea() !== "") {
+//         let change = "<p style='font-size:18px; color:blue;'>";
+//         change += "Length of Shortest word: " + "<b style='font-size:20px; color: rgb(6, 51, 82);'>" + shortestWord.length + "</b>";
+//         change += "</p>";
+//         let result = shortestWord + "<br>" + change;
+
+//         return result;
+//     } else {
+//         return "No word yet";
+//     }
+// }
