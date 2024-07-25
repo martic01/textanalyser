@@ -204,11 +204,11 @@ body {
 
 .text {
     margin: auto;
-    height: 50%;
+    height: 42%;
     width: 95%;
     background-color: goldenrod;
     border-radius: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
     margin-top: 10px;
 
 }
@@ -623,7 +623,7 @@ img {
     width: 60%;
     height: 60px;
     text-align: center;
-
+   
 }
 
 #copy2 {
@@ -638,17 +638,27 @@ img {
     width: 45%;
     height: 60%;
     display: none;
+    font-size: 18px;
+    font-weight: 800;
+    color: rgb(21, 22, 22);
 }
 #clear {
     padding-top: 10px;
     width: 45%;
     height: 60%;
     display: none;
+    font-size: 18px;
+    font-weight: 800;
+    color: rgb(23, 26, 26);
 }
 .bbtn{
+    font-size: 25px;
+    color: aqua;
     display: flex;
+    padding-left: 20px;
     gap: 20px;
-    height: 60px;
+    height: 5px;
+    width: 30%;
 }
 
 .hedd {
@@ -664,9 +674,30 @@ img {
     width: 350px;
     height: 30px;
     gap: 20px;
+    opacity: 0;
+    
+    animation: 5s fadin linear forwards;
 
 }
-
+.paste{
+    color: rgb(102, 21, 21);
+    font-size: 18px;
+    font-weight: 800;
+    padding: 2px;
+    border-radius: 3px;
+}
+.editing{
+    color: rgb(102, 21, 21);
+    font-size: 16px;
+    font-weight: 800;
+    padding: 2px;
+    border-radius: 3px;
+}
+.paste:hover{
+    transition: .3s;
+    box-shadow: 0 0 10px rgba(238, 11, 11, 0.781);
+    color: rgb(240, 33, 33);
+}
 .copy {
     display: flex;
     justify-content: center;
@@ -681,7 +712,6 @@ img {
     box-shadow: 0 0 7px 2px white;
     border-radius: 15px;
     cursor: pointer;
-
 }
 
 
