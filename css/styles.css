@@ -57,8 +57,9 @@ p {
     }
 
     .option2 {
-        margin-top: 500px;
-        margin-left: -150px;
+        height: 150px !important;
+        margin-top: 800px;
+        margin-left: -250px;
     }
 }
 
