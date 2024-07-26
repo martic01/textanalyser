@@ -577,7 +577,6 @@ img {
 }
 
 .email-full p {
-    height: 0;
     text-align: left;
     margin-top: 20px;
     line-height: 30px;
@@ -689,26 +688,35 @@ img {
 
 }
 
-.paste {
-    color: rgb(102, 21, 21);
-    font-size: 18px;
-    font-weight: 800;
-    padding: 2px;
-    border-radius: 3px;
-}
+
 
 .editing {
     color: rgb(102, 21, 21);
     font-size: 16px;
     font-weight: 800;
     padding: 2px;
+  
     border-radius: 3px;
 }
 
-.paste:hover {
+.img2{
+    height: 20px;
+    width: 20px;
+    background-color: #ff7d00;
+    opacity: 0;
+
+    
+    animation: 2s fadin linear forwards;
+    animation-delay: 5.5s;
+}
+.paste {
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+.paste:hover,.img2:hover {
+    border-bottom: 3px solid black;
     transition: .3s;
-    box-shadow: 0 0 10px rgba(238, 11, 11, 0.781);
-    color: rgb(240, 33, 33);
 }
 
 .copy {

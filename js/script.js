@@ -435,15 +435,20 @@ window.onload = function () {
     $(".editin").click(function () {
         let index = $(".editin").index(this)
         if (index === 0) {
-            $(".managernm").html("<input placeholder='Managers Name' value ='[Mangers Name]' type='text'  id='managernm'><b ><button class='paste' value ='1'>Paste</button></b>")
+            $(".managernm").html("<input placeholder='Managers Name' value ='[Mangers Name]' type='text'  id='managernm'><b ><button class='paste' value ='1'><img class='img2' src='img/done icon.png'></button></b>")
+            $(".editin").eq(index).hide()
         } else if (index === 1) {
-            $(".yrposition").html("<input placeholder='Your Position' value ='[Your Position]' type='text'  id='yrposition'><b ><button class='paste' value ='2'>Paste</button></b>")
+            $(".yrposition").html("<input placeholder='Your Position' value ='[Your Position]' type='text'  id='yrposition'><b ><button class='paste' value ='2'><img class='img2' src='img/done icon.png'></button></b>")
+             $(".editin").eq(index).hide()
         } else if (index === 2) {
-            $(".company").html("<input placeholder='Company Name' value ='[Company Name]' type='text'  id='company'><b ><button class='paste' value ='3'>Paste</button></b>")
+            $(".company").html("<input placeholder='Company Name' value ='[Company Name]' type='text'  id='company'><b ><button class='paste' value ='3'><img class='img2' src='img/done icon.png'></button></b>")
+             $(".editin").eq(index).hide()
         } else if (index === 3) {
-            $(".nw-date").html("<input placeholder='Resignation Date' value ='[Resignation Date]' type='date'  id='nw-date'><b ><button class='paste' value ='4'>Paste</button></b>")
+            $(".nw-date").html("<input placeholder='Resignation Date' value ='[Resignation Date]' type='date'  id='nw-date'><b ><button class='paste' value ='4'><img class='img2' src='img/done icon.png'></button></b>")
+             $(".editin").eq(index).hide()
         } else if (index === 4) {
-            $(".yrname").html("<input placeholder='Your Name' value ='[Your Name]' type='text'  id='yrname'><b ><button class='paste' value ='6'>Paste</button></b>")
+            $(".yrname").html("<input placeholder='Your Name' value ='[Your Name]' type='text'  id='yrname'><b ><button class='paste' value ='5'><img class='img2' src='img/done icon.png'></button></b>")
+             $(".editin").eq(index).hide()
         }
         $(".paste").click(function () {
             let index = parseInt($(this).val())
@@ -452,19 +457,23 @@ window.onload = function () {
             const value3Taken = $("#company").val();
             const value4Taken = $("#yrposition").val();
             const value5Taken = $("#nw-date").val();
-           
+
 
             if (index === 1 && value1Taken.trim() !== "") {
                 $(".managernm").text(value1Taken);
-    
+                $(".no1").show()
             } else if (index === 2 && value4Taken.trim() !== "") {
                 $(".yrposition").text(value4Taken);
+                $(".no2").show()
             } else if (index === 3 && value3Taken.trim() !== "") {
                 $(".company").text(value3Taken);
+                $(".no3").show()
             } else if (index === 4 && value5Taken.trim() !== "") {
                 $(".nw-date").text(value5Taken);
-            } else if (index === 6 && value2Taken.trim() !== "") {
+                $(".no4").show()
+            } else if (index === 5 && value2Taken.trim() !== "") {
                 $(".yrname").text(value2Taken);
+                $(".no5").show()
             }
         });
     });
