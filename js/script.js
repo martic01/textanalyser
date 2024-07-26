@@ -93,7 +93,7 @@ function topThreeWords() {
 
     top3Words.forEach(function (Twords) {
 
-        new2 += "<li>" + Twords[0] + " : " + "<b style='color:rgb(44, 1, 1);'>" + Twords[1] + "</b>" + "</li>";
+        new2 += "<li>" + Twords[0] + " : " + "<b style='color:#14213d;'>" + Twords[1] + "</b>" + "</li>";
 
     });
     new2 += "</ul>"
@@ -119,8 +119,8 @@ function findLongestWord() {
 
     }
     if (textArea() !== "") {
-        let change = "<p style='font-size:18px; color:blue;'>"
-        change += "Lenght of longest word : " + "<b style='font-size:20px; color: rgb(6, 51, 82);'>" + longestWord.length; + "</b>"
+        let change = "<p style='font-size:18px; color:rgb(177, 177, 240);'>"
+        change += "Lenght of longest word : " + "<b style='font-size:20px; color: aqua;'>" + longestWord.length; + "</b>"
         change += "</p>"
         let result = longestWord + "<br>" + change
 
@@ -222,7 +222,7 @@ function numberToBinary() {
 
     NewbinaryNumber.forEach(function (Twords) {
 
-        new2 += "<li>" + Twords[0] + " : " + "<b style='color:rgb(44, 1, 1); font-size:18px;'>" + Twords[1] + "</b>" + "</li>";
+        new2 += "<li>" + Twords[0] + " : " + "<b style='color:#14213d; font-size:18px;'>" + Twords[1] + "</b>" + "</li>";
 
     });
     new2 += "</ul>"
@@ -321,18 +321,16 @@ function copy1(text) {
 function changeStyle2() {
     $(".text").addClass("text2")
     $(".result").addClass("text2")
-    $(".top2").addClass("text2")
-    $(".return").addClass("text3")
-    $(".topwrd").addClass("border1")
+    $(".topwrd").addClass("text2")
+    $(".return").addClass("text2")
     $(".mncont").addClass("mncont2")
     $(".list").addClass("hover")
 }
 function changeStyle1() {
     $(".text").removeClass("text2")
     $(".result").removeClass("text2")
-    $(".top2").removeClass("text2")
-    $(".return").removeClass("text3")
-    $(".topwrd").removeClass("border1")
+    $(".topwrd").removeClass("text2")
+    $(".return").removeClass("text2")
     $(".mncont").removeClass("mncont2")
     $(".list").removeClass("hover")
 }

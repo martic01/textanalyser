@@ -4,7 +4,6 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-
 }
 
 .font2 {
@@ -31,18 +30,48 @@ p {
     cursor: pointer;
     text-decoration: none;
 }
-
+@media only screen and (max-width:960px){
+    .pjnm {
+        width:900px !important;
+        border-radius: 30%;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center !important;
+    }
+    .mncont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 50px auto;
+        width: 900px !important;
+        height: 650px;
+        box-shadow: 0 0 25px 2px white;
+    
+        background: radial-gradient(circle, #e0fbfc);
+    }
+}
 body {
-    background-color: rgb(165, 165, 165);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
     font-family: "Chakra Petch", sans-serif;
+}
+.bgcolor{
+    background-color: #669bbc !important;
+}
+.bgcolor2{
+    background-color: #FFF !important;
 }
 
 .pjnm {
     margin: 20px auto;
-    width: 500px;
+    width: 100%;
     border-radius: 30%;
     height: 100px;
-    box-shadow: 0 0 7px -3px rgb(214, 214, 214);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,9 +100,8 @@ body {
     width: 1250px;
     height: 650px;
     box-shadow: 0 0 25px 2px white;
-    border-radius: 20px;
-    background: radial-gradient(circle, black, goldenrod);
 
+    background: radial-gradient(circle, #e0fbfc);
 }
 
 
@@ -84,47 +112,47 @@ body {
 
 @keyframes roll {
     0% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4));
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3);
     }
 
     10% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black);
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc);
     }
 
     20% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black, rgb(99, 72, 4));
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3);
     }
 
     30% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black, rgb(99, 72, 4), black);
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3, #e0fbfc);
     }
 
     40% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black, rgb(99, 72, 4), black, rgb(99, 72, 4));
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3);
     }
 
     50% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black, rgb(99, 72, 4), black, rgb(99, 72, 4), black);
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3, #e0fbfc);
     }
 
     60% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black, rgb(99, 72, 4), black, rgb(99, 72, 4));
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3);
     }
 
     70% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black, rgb(99, 72, 4), black);
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3, #e0fbfc);
     }
 
     80% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black, rgb(99, 72, 4));
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc, #f9f7f3);
     }
 
     90% {
-        background: radial-gradient(circle, black, rgb(99, 72, 4), black);
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3, #e0fbfc);
     }
 
     100% {
-        background: radial-gradient(circle, black, rgb(102, 74, 3));
+        background: radial-gradient(circle, #e0fbfc, #f9f7f3);
     }
 
 
@@ -132,63 +160,52 @@ body {
 
 
 .mncont2 {
-
-    background: linear-gradient(to bottom, black, silver);
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.171);
+    background:white;
 
 }
 
 .mncont2:hover {
+
     transition: 0.5s ease-in-out !important;
-    animation: 3s roll2 linear infinite !important;
+    animation: 5s roll2 linear infinite !important;
 }
 
 @keyframes roll2 {
     0% {
-        background: linear-gradient(to bottom, black, silver);
+       transform: translate(-4px);
+    }
+    10%{
+    border-left: 1px solid rgba(60, 60, 238, 0.541) ;
     }
 
-    10% {
-        background: linear-gradient(to bottom, black, silver, black);
+    25% {
+        transform: translate(4px);
+        border-left: 1px solid rgba(0, 0, 0, 0.527);
     }
-
-    20% {
-        background: linear-gradient(to bottom, black, silver, black, silver);
-    }
-
-    30% {
-        background: linear-gradient(to bottom, black, silver, black, silver, black);
-    }
-
-    40% {
-        background: linear-gradient(to bottom, black, silver, black, silver, black, silver);
+    40%{
+      border-right: 1px solid rgb(60, 60, 238) ;
     }
 
     50% {
-        background: linear-gradient(to bottom, black, silver, black, silver, black, silver, black);
+        transform: translate(-4px);
+        border-right: 1px solid rgb(60, 60, 238) ;
+    }
+    60%{
+      border-left: 1px solid rgb(60, 60, 238) ;
     }
 
-    60% {
-        background: linear-gradient(to bottom, black, silver, black, silver, black, silver);
-    }
-
-    70% {
-        background: linear-gradient(to bottom, black, silver, black, silver, black);
-    }
-
-    80% {
-        background: linear-gradient(to bottom, black, silver, black, silver);
-    }
-
-    90% {
-        background: linear-gradient(to bottom, black, silver, black);
-    }
+    75% {
+        transform: translate(4px);
+        border-left: 1px solid rgb(60, 60, 238) ;
+         }
 
     100% {
-        background: linear-gradient(to bottom, black, silver);
+        transform: translate(0px);
+      
     }
 
-
-}
+  }
 
 .allt {
     height: 100%;
@@ -206,7 +223,7 @@ body {
     margin: auto;
     height: 42%;
     width: 95%;
-    background-color: goldenrod;
+    background-color: aqua;
     border-radius: 20px;
     margin-bottom: 40px;
     margin-top: 10px;
@@ -214,12 +231,9 @@ body {
 }
 
 .text2 {
-    background-color: rgb(119, 118, 118) !important;
-}
-
-.text3 {
     background-color: rgb(60, 60, 238) !important;
 }
+
 
 .text p {
     height: 10%;
@@ -254,7 +268,7 @@ body {
 .result {
     padding: 10px 0 10px;
     width: 45%;
-    background-color: goldenrod;
+    background-color: #14213d;
     border-radius: 20px;
     margin-bottom: 10px;
     display: flex;
@@ -262,14 +276,13 @@ body {
     align-items: center;
     gap: 10px;
     justify-content: center;
-    border: 5px solid rgb(218, 215, 215);
     margin-bottom: 15px;
     overflow: hidden;
 }
 
 .result p .long {
     font-size: 20px;
-    color: yellow;
+    color:aqua;
 }
 
 .result p .short {
@@ -286,7 +299,7 @@ body {
 
 .result p span {
     font-size: 25px;
-    color: rgb(6, 51, 82);
+    color: aqua;
 }
 
 .topwrd {
@@ -298,15 +311,11 @@ body {
     font-size: 20px;
     color: white;
     font-weight: 700;
-    background-color: black;
-    border-radius: 20px;
-    border: 3px solid rgb(245, 241, 6);
+    background-color:aqua;
+
 
 }
 
-.border1 {
-    border: 3px solid rgb(238, 238, 236) !important;
-}
 
 .num {
     height: 40%;
@@ -324,7 +333,7 @@ body {
     margin-top: 15px;
     height: 80%;
     width: 100%;
-    background-color: goldenrod;
+    background-color:rgb(238, 235, 235);
     color: rgb(27, 27, 27);
 }
 
@@ -336,9 +345,7 @@ body {
     font-weight: 700;
     width: 32%;
     color: white;
-    border-radius: 20px;
-    background-color: goldenrod;
-    border: 5px solid rgb(218, 215, 215);
+    background-color: aqua;
 }
 
 .return p {
@@ -350,7 +357,7 @@ body {
 }
 
 .return p span {
-    color: rgb(2, 14, 1);
+    color:aqua;
     font-size: 25px;
 }
 
@@ -465,7 +472,8 @@ body {
 }
 
 .hover {
-    background-color: goldenrod;
+    height: 17%;
+    background-color: #ff7d00;
 }
 
 .hover li:hover {
@@ -479,7 +487,7 @@ body {
     transition: 0.3s ease-in-out;
     color: white;
     font-size: 20px;
-    background-color: goldenrod;
+    background-color: #ff7d00;
 }
 
 .font:hover .list {
@@ -545,7 +553,6 @@ img {
     color: rgb(15, 3, 3);
     padding: 30px 30px;
     background-color: rgb(241, 241, 241);
-    border-radius: 20px;
     overflow: scroll;
     opacity: 0;
     display: none;
@@ -623,7 +630,7 @@ img {
     width: 60%;
     height: 60px;
     text-align: center;
-   
+
 }
 
 #copy2 {
@@ -642,6 +649,7 @@ img {
     font-weight: 800;
     color: rgb(21, 22, 22);
 }
+
 #clear {
     padding-top: 10px;
     width: 45%;
@@ -651,7 +659,8 @@ img {
     font-weight: 800;
     color: rgb(23, 26, 26);
 }
-.bbtn{
+
+.bbtn {
     font-size: 25px;
     color: aqua;
     display: flex;
@@ -675,29 +684,33 @@ img {
     height: 30px;
     gap: 20px;
     opacity: 0;
-    
+
     animation: 5s fadin linear forwards;
 
 }
-.paste{
+
+.paste {
     color: rgb(102, 21, 21);
     font-size: 18px;
     font-weight: 800;
     padding: 2px;
     border-radius: 3px;
 }
-.editing{
+
+.editing {
     color: rgb(102, 21, 21);
     font-size: 16px;
     font-weight: 800;
     padding: 2px;
     border-radius: 3px;
 }
-.paste:hover{
+
+.paste:hover {
     transition: .3s;
     box-shadow: 0 0 10px rgba(238, 11, 11, 0.781);
     color: rgb(240, 33, 33);
 }
+
 .copy {
     display: flex;
     justify-content: center;
@@ -707,7 +720,7 @@ img {
     font-size: 14px;
     font-weight: 700;
     color: white;
-    background-color: black;
+    background-color:#14213d;
     border: none;
     box-shadow: 0 0 7px 2px white;
     border-radius: 15px;
@@ -717,7 +730,7 @@ img {
 
 
 .copy:hover {
-    background-color: black;
+    background-color:#14213d;
     color: rgb(243, 19, 19);
     font-size: 18px;
     font-weight: 900;
