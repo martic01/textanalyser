@@ -30,9 +30,10 @@ p {
     cursor: pointer;
     text-decoration: none;
 }
-@media only screen and (max-width:560px){
+
+@media only screen and (max-width:760px) {
     .pjnm {
-        width:1250px !important;
+        width: 1250px !important;
         border-radius: 30%;
         height: 100px;
         display: flex;
@@ -40,23 +41,27 @@ p {
         align-items: center;
         justify-content: center !important;
     }
+
     .mncont {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
+        width: 1280px !important;
         margin-top: 350px !important;
 
         height: 950px !important;
         box-shadow: 0 0 25px 2px white;
-    
+
         background: radial-gradient(circle, #e0fbfc);
     }
-    .option2{
+
+    .option2 {
         margin-top: 500px;
         margin-left: -150px;
     }
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -64,10 +69,12 @@ body {
     background-color: white;
     font-family: "Chakra Petch", sans-serif;
 }
-.bgcolor{
+
+.bgcolor {
     background-color: #669bbc !important;
 }
-.bgcolor2{
+
+.bgcolor2 {
     background-color: #FFF !important;
 }
 
@@ -164,8 +171,8 @@ body {
 
 
 .mncont2 {
-box-shadow: 0 0 4px rgba(0, 0, 0, 0.171);
-    background:white;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.171);
+    background: white;
 
 }
 
@@ -177,39 +184,42 @@ box-shadow: 0 0 4px rgba(0, 0, 0, 0.171);
 
 @keyframes roll2 {
     0% {
-       transform: translate(-4px);
+        transform: translate(-4px);
     }
-    10%{
-    border-left: 1px solid rgba(60, 60, 238, 0.541) ;
+
+    10% {
+        border-left: 1px solid rgba(60, 60, 238, 0.541);
     }
 
     25% {
         transform: translate(4px);
         border-left: 1px solid rgba(0, 0, 0, 0.527);
     }
-    40%{
-      border-right: 1px solid rgb(60, 60, 238) ;
+
+    40% {
+        border-right: 1px solid rgb(60, 60, 238);
     }
 
     50% {
         transform: translate(-4px);
-        border-right: 1px solid rgb(60, 60, 238) ;
+        border-right: 1px solid rgb(60, 60, 238);
     }
-    60%{
-      border-left: 1px solid rgb(60, 60, 238) ;
+
+    60% {
+        border-left: 1px solid rgb(60, 60, 238);
     }
 
     75% {
         transform: translate(4px);
-        border-left: 1px solid rgb(60, 60, 238) ;
-         }
+        border-left: 1px solid rgb(60, 60, 238);
+    }
 
     100% {
         transform: translate(0px);
-      
+
     }
 
-  }
+}
 
 .allt {
     height: 100%;
@@ -286,7 +296,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, 0.171);
 
 .result p .long {
     font-size: 20px;
-    color:aqua;
+    color: aqua;
 }
 
 .result p .short {
@@ -315,7 +325,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, 0.171);
     font-size: 20px;
     color: white;
     font-weight: 700;
-    background-color:aqua;
+    background-color: aqua;
 
 
 }
@@ -337,7 +347,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, 0.171);
     margin-top: 15px;
     height: 80%;
     width: 100%;
-    background-color:rgb(238, 235, 235);
+    background-color: rgb(238, 235, 235);
     color: rgb(27, 27, 27);
 }
 
@@ -361,7 +371,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, 0.171);
 }
 
 .return p span {
-    color:aqua;
+    color: aqua;
     font-size: 25px;
 }
 
@@ -699,27 +709,30 @@ img {
     font-size: 16px;
     font-weight: 800;
     padding: 2px;
-  
+
     border-radius: 3px;
 }
 
 
-.img2{
+.img2 {
     height: 20px;
     width: 20px;
     background-color: #ff7d00;
     opacity: 0;
 
-    
+
     animation: 2s fadin linear forwards;
     animation-delay: 5.5s;
 }
+
 .paste {
     border: none;
     border-radius: 3px;
     margin-left: 5px;
 }
-.paste:hover,.img2:hover {
+
+.paste:hover,
+.img2:hover {
     border-bottom: 3px solid black;
     transition: .3s;
 }
@@ -733,7 +746,7 @@ img {
     font-size: 14px;
     font-weight: 700;
     color: white;
-    background-color:#14213d;
+    background-color: #14213d;
     border: none;
     box-shadow: 0 0 7px 2px white;
     border-radius: 15px;
@@ -743,7 +756,7 @@ img {
 
 
 .copy:hover {
-    background-color:#14213d;
+    background-color: #14213d;
     color: rgb(243, 19, 19);
     font-size: 18px;
     font-weight: 900;
