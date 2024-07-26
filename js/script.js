@@ -34,7 +34,7 @@ function countWords() {
     let counter = 0
 
     array.forEach(function (text) {
-        if (textArea() !== ""  && text !== "" && !Number(text)) {
+        if (textArea() !== "" && text !== "" && !Number(text)) {
             counter++
         }
     })
@@ -106,7 +106,7 @@ function findLongestWord() {
     let words = textAreaToArray(textAreaToLowercase(textArea()))
 
     if (words.length === 0) {
-        let longest = null
+        let longest = "No words yet"
         return longest;
     }
 
@@ -144,9 +144,9 @@ function countWordsOccurence() {
     // let escapedInputWord = escapeRegExp(words);
     // let regex = new RegExp(`\\W${escapedInputWord}\\W*`, 'gi');
     // regex.test(text)
- 
+
     array.forEach(function (text) {
-        if (textArea() !== ""  && text !== "" && !Number(text) && text === words ) {
+        if (textArea() !== "" && text !== "" && !Number(text) && text === words) {
             counter++
         }
     })
@@ -351,15 +351,15 @@ function fontStyle3() {
     $(".mncont").addClass("font3")
 
 }
-function announceText(message) {
-    let statusMessageDiv = document.getElementById('mail');
-    // Clear the content to force the screen reader to read the new message
-    statusMessageDiv.textContent = '';
-    // Set a small delay to ensure the screen reader registers the content change
-    setTimeout(() => {
-        statusMessageDiv.textContent = message;
-    }, 100);
-}
+// function announceText(message) {
+//     let statusMessageDiv = document.getElementById('mail');
+//     // Clear the content to force the screen reader to read the new message
+//     statusMessageDiv.textContent = '';
+//     // Set a small delay to ensure the screen reader registers the content change
+//     setTimeout(() => {
+//         statusMessageDiv.textContent = message;
+//     }, 100);
+// }
 
 
 // UI
@@ -420,7 +420,6 @@ window.onload = function () {
         copy1(textToCopied)
         $("#cop1").hide();
         $("#cop2").show();
-        console.log("clicked")
     });
 
     $("#copy2").click(function () {
@@ -428,52 +427,50 @@ window.onload = function () {
         copy1(textToCopied)
         $("#cop3").hide();
         $("#cop4").show();
-        console.log("clicked")
     });
     $("#done").click(function () {
         let textToCopied = $("#message").val();
         copy1(textToCopied)
         $("#cop5").hide();
         $("#cop6").show();
-        console.log("clicked")
-
     });
     $(".editin").click(function () {
         let index = $(".editin").index(this)
-        if(index === 0){
-        $(".managernm").html("<input type='text'  id='managernm'><b ><button class='paste' value ='1'>Paste</button></b>")
-        }else if (index === 1){
-            $(".yrposition").html("<input type='text'  id='yrposition'><b ><button class='paste' value ='2'>Paste</button></b>")
-        }else if (index === 2){
-            $(".company").html("<input type='text'  id='company'><b ><button class='paste' value ='3'>Paste</button></b>")
-        }else if (index === 3){
-            $(".nw-date").html("<input type='date'  id='nw-date'><b ><button class='paste' value ='4'>Paste</button></b>")
-        }else if (index === 4){
-            $(".yrname").html("<input type='text'  id='yrname'><b ><button class='paste' value ='6'>Paste</button></b>")
+        if (index === 0) {
+            $(".managernm").html("<input placeholder='Managers Name' value ='[Mangers Name]' type='text'  id='managernm'><b ><button class='paste' value ='1'>Paste</button></b>")
+        } else if (index === 1) {
+            $(".yrposition").html("<input placeholder='Your Position' value ='[Your Position]' type='text'  id='yrposition'><b ><button class='paste' value ='2'>Paste</button></b>")
+        } else if (index === 2) {
+            $(".company").html("<input placeholder='Company Name' value ='[Company Name]' type='text'  id='company'><b ><button class='paste' value ='3'>Paste</button></b>")
+        } else if (index === 3) {
+            $(".nw-date").html("<input placeholder='Resignation Date' value ='[Resignation Date]' type='date'  id='nw-date'><b ><button class='paste' value ='4'>Paste</button></b>")
+        } else if (index === 4) {
+            $(".yrname").html("<input placeholder='Your Name' value ='[Your Name]' type='text'  id='yrname'><b ><button class='paste' value ='6'>Paste</button></b>")
         }
-         $(".paste").click( function () {
+        $(".paste").click(function () {
             let index = parseInt($(this).val())
-            const value1Taken = $("#managernm").val().trim();
-            const value2Taken = $("#yrname").val().trim();
-            const value3Taken = $("#company").val().trim();
-            const value4Taken = $("#yrposition").val().trim();
-            const value5Taken = $("#nw-date").val().trim();
+            const value1Taken = $("#managernm").val();
+            const value2Taken = $("#yrname").val();
+            const value3Taken = $("#company").val();
+            const value4Taken = $("#yrposition").val();
+            const value5Taken = $("#nw-date").val();
            
 
-            if (index === 1 && value1Taken !=="") {
+            if (index === 1 && value1Taken.trim() !== "") {
                 $(".managernm").text(value1Taken);
-            } else if (index === 2 && value4Taken !=="") {
+    
+            } else if (index === 2 && value4Taken.trim() !== "") {
                 $(".yrposition").text(value4Taken);
-            } else if (index === 3 && value3Taken !=="") {
+            } else if (index === 3 && value3Taken.trim() !== "") {
                 $(".company").text(value3Taken);
-            } else if (index === 4 && value5Taken !=="") {
+            } else if (index === 4 && value5Taken.trim() !== "") {
                 $(".nw-date").text(value5Taken);
-            }  else if (index === 6 && value2Taken !=="") {
+            } else if (index === 6 && value2Taken.trim() !== "") {
                 $(".yrname").text(value2Taken);
             }
         });
     });
-  
+
     $("#style1").click(function () {
         changeStyle1()
     })
